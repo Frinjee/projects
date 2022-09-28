@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = '8fc1d0c1dd57cba2787d020202f6e3cc'
+API_KEY = '_KEY'
 BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
 zip_code = input('Enter a zip code: ')
