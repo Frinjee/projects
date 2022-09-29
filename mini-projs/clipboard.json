@@ -1,0 +1,1 @@
+{"current": "\t#print(f'Current Temperature is: {temp_cels}\u00b0 in {city_name}, with {weather}')\r\n\t#print(data)"}
