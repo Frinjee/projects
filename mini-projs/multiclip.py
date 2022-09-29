@@ -12,20 +12,24 @@ def load_jsonFile_andReturn(file_path):
 			data = json.load(f)	
 			return data
 	except: # if file doesn't exist return empty dict
-		return {}	
-		
+		return {}
+
+def return_options():
+	options = ['--save', '--load', '--list', '--help']	
+	print('Commads available:', options)
+
 # accept only 1 command, e.g. python multiclip.py [save, load, list]
 if len(sys.argv) == 2:
 	cmd = sys.argv[1] # accept 2nd argument for command
 	data = load_jsonFile_andReturn(S_DATA)
 
-	if cmd == 'save':
+	if cmd == '--save':
 		key = input('Enter a key: ') # ask for key
 
 		data[key] = clipboard.paste() # save whatever was on kb
 		save_json(S_DATA, data) # save data to file
 		print('Data Saved')
-	elif cmd == 'load':
+	elif cmd == '-load':
 		key = input('Enter key to search for')
 
 		if key in data: # check if key is in stored data
@@ -33,8 +37,12 @@ if len(sys.argv) == 2:
 			print('Data Copied to clipboard') 
 		else: # if key does not exist print so
 			print('Key does not exist')
-	elif cmd == 'list':
+	elif cmd == '--list':
 		print(data)
+
+	elif cmd == '--help':
+		return_options()
+
 	else:
 		print('{cmd} is not a valid command, use --help for available commands')
 else:
