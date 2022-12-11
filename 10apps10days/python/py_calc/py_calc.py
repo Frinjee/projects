@@ -1,6 +1,7 @@
+# 1st calculator
 from tkinter import *
 
-# global exopression variable
+# global expression variable
 exp = ''
 
 def onClick_num(x):
