@@ -1,11 +1,7 @@
 name: Security Scanning
 on:
   push:
-    branches:
-    - master
   pull_request:
-    branches:
-    - master
 
 jobs:
   security:
@@ -20,4 +16,4 @@ jobs:
           pip3 install bandit
       - name: Run security scan
         run: |
-          bandit -r .
+          python3 security_scan.py
